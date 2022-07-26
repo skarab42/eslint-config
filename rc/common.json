@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "extends": ["eslint:recommended", "plugin:unicorn/recommended", "prettier"],
+  "env": { "es2022": true },
+  "rules": {
+    "no-alert": "error",
+    "no-console": "warn",
+    "no-debugger": "warn"
+  }
+}

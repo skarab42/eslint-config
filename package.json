@@ -1,0 +1,48 @@
+{
+  "name": "@skarab/eslint-config",
+  "description": "My ESLint config",
+  "version": "0.0.0-development",
+  "author": {
+    "name": "skarab42",
+    "email": "contact@skarab42.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skarab42/eslint-config.git"
+  },
+  "homepage": "https://github.com/skarab42/eslint-config",
+  "bugs": "https://github.com/skarab42/eslint-config/issues",
+  "funding": "https://github.com/sponsors/skarab42",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": ".eslintrc.json",
+  "files": [
+    ".eslintrc.json",
+    "rc"
+  ],
+  "scripts": {
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier **/* --write --cache --ignore-unknown"
+  },
+  "prettier": "@skarab/prettier-config",
+  "dependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-unicorn": "^43.0.2"
+  },
+  "devDependencies": {
+    "@skarab/prettier-config": "^1.2.1",
+    "eslint": "^8.20.0",
+    "prettier": "^2.7.1"
+  },
+  "peerDependencies": {
+    "eslint": ">=8"
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=7"
+  },
+  "packageManager": "pnpm@7.6.0"
+}
