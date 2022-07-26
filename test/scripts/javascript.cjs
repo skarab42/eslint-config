@@ -4,4 +4,8 @@ console.log('prout', prout);
 
 var plop = 42;
 
-function emptyFunction() {}
+function emptyFunction(plop) {
+  return plop;
+}
+
+throw 'Kaboom!';

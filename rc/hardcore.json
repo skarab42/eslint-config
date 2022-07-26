@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.d.ts"],
+      "extends": ["plugin:etc/recommended", "plugin:@typescript-eslint/recommended-requiring-type-checking"],
+      "rules": {
+        "etc/no-t": "error",
+        "etc/no-const-enum": "error",
+        "etc/no-misused-generics": "warn",
+        "@typescript-eslint/no-throw-literal": "error",
+        "@typescript-eslint/explicit-function-return-type": "warn"
+      }
+    }
+  ]
+}

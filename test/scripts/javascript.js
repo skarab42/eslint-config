@@ -9,3 +9,5 @@ function emptyFunction() {}
 function name(t = 0) {
   return t;
 }
+
+throw 'Kaboom!';

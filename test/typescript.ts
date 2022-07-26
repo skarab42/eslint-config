@@ -10,14 +10,10 @@ function toArray<T>(elements: ArrayLike<T>) {
   return [...elements];
 }
 
-export function third<Aaa, Baa, Caa>(a: unknown, b: Baa, c: Caa): Caa {
-  return c;
-}
-
 interface Prout {
   name: string;
 }
 
 throw 'Kaboom!';
 
-export { barType } from './foo';
+export type { barType } from './foo';
