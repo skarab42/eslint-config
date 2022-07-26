@@ -1,5 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/eslintrc",
   "extends": ["plugin:n/recommended"],
-  "env": { "node": true }
+  "env": { "node": true },
+  "rules": {
+    "n/no-missing-import": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.d.ts"],
+      "rules": {
+        "n/no-unsupported-features/es-syntax": "off"
+      }
+    }
+  ]
 }

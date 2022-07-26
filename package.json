@@ -29,17 +29,23 @@
   },
   "prettier": "@skarab/prettier-config",
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.3.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-unicorn": "^43.0.2"
   },
   "devDependencies": {
     "@skarab/prettier-config": "^1.2.1",
     "eslint": "^8.20.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
   },
   "peerDependencies": {
-    "eslint": ">=8"
+    "eslint": ">=8",
+    "typescript": ">=4"
   },
   "engines": {
     "node": ">=14",
