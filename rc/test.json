@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "overrides": [
+    {
+      "files": ["*.test.ts"],
+      "plugins": ["no-only-tests"],
+      "rules": {
+        "no-only-tests/no-only-tests": "error"
+      }
+    }
+  ]
+}
