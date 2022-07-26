@@ -1,4 +1,5 @@
 import prout from 'prout';
+const prout2 = require('prout');
 
 console.log('prout', prout);
 

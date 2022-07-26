@@ -30,6 +30,7 @@
   "prettier": "@skarab/prettier-config",
   "dependencies": {
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-unicorn": "^43.0.2"
   },
   "devDependencies": {

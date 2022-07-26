@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "extends": ["plugin:n/recommended"],
+  "env": { "node": true }
+}
