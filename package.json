@@ -22,6 +22,7 @@
   "files": [
     "rc",
     ".eslintrc.json",
+    "hardcore.json",
     "recommended.json"
   ],
   "scripts": {
