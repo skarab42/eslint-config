@@ -7,5 +7,10 @@
     "no-console": "warn",
     "no-debugger": "warn",
     "unicorn/no-process-exit": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": [".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx"]
+    }
+  ]
 }
