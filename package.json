@@ -61,5 +61,12 @@
     "node": ">=14",
     "pnpm": ">=7"
   },
-  "packageManager": "pnpm@7.6.0"
+  "packageManager": "pnpm@7.6.0",
+  "keywords": [
+    "eslint",
+    "config",
+    "eslint-config",
+    "typescript",
+    "hardcore"
+  ]
 }
