@@ -5,6 +5,7 @@
   "rules": {
     "no-alert": "error",
     "no-console": "warn",
-    "no-debugger": "warn"
+    "no-debugger": "warn",
+    "unicorn/no-process-exit": "off"
   }
 }
