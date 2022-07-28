@@ -55,3 +55,9 @@ Or if you want a (slightly) less hardcore version (no pain, no gain), use:
 - [eslint-plugin-etc](https://github.com/cartant/eslint-plugin-etc)
 - [eslint-plugin-promise](https://github.com/xjamundx/eslint-plugin-promise)
 - [eslint-plugin-no-use-extend-native](https://github.com/dustinspecker/eslint-plugin-no-use-extend-native)
+
+# My other shared configurations
+
+- [@skarab/eslint](https://github.com/skarab42/eslint-config)
+- [@skarab/prettier](https://github.com/skarab42/prettier-config)
+- [@skarab/typescript](https://github.com/skarab42/typescript-config)
