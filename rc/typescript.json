@@ -10,6 +10,8 @@
   },
   "rules": {
     "@typescript-eslint/prefer-ts-expect-error": "warn",
-    "no-explicit-type-exports/no-explicit-type-exports": "error"
+    "no-explicit-type-exports/no-explicit-type-exports": "error",
+    "dot-notation": "off",
+    "@typescript-eslint/dot-notation": ["error", { "allowIndexSignaturePropertyAccess": true }]
   }
 }
