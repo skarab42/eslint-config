@@ -58,6 +58,6 @@ Or if you want a (slightly) less hardcore version (no pain, no gain), use:
 
 # My other shared configurations
 
-- [@skarab/eslint](https://github.com/skarab42/eslint-config)
-- [@skarab/prettier](https://github.com/skarab42/prettier-config)
-- [@skarab/typescript](https://github.com/skarab42/typescript-config)
+- [@skarab/eslint-config](https://github.com/skarab42/eslint-config)
+- [@skarab/prettier-config](https://github.com/skarab42/prettier-config)
+- [@skarab/typescript-config](https://github.com/skarab42/typescript-config)
