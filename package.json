@@ -33,27 +33,27 @@
   },
   "prettier": "@skarab/prettier-config",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.31.0",
-    "@typescript-eslint/parser": "^5.31.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^3.3.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
     "eslint-plugin-etc": "^2.0.2",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-no-explicit-type-exports": "^0.12.1",
     "eslint-plugin-no-only-tests": "^3.0.0",
     "eslint-plugin-no-use-extend-native": "^0.5.0",
-    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-unicorn": "^43.0.2"
   },
   "devDependencies": {
-    "@skarab/prettier-config": "^1.2.1",
-    "eslint": "^8.20.0",
+    "@skarab/prettier-config": "^1.2.2",
+    "eslint": "^8.23.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "semantic-release": "^19.0.3",
+    "semantic-release": "^19.0.5",
     "simple-git-hooks": "^2.8.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.3"
   },
   "peerDependencies": {
     "eslint": ">=8",
