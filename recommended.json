@@ -1,3 +1,0 @@
-{
-  "extends": ["./rc/base", "./rc/import", "./rc/node", "./rc/typescript", "./rc/test"]
-}

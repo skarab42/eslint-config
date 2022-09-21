@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "extends": [
+    "eslint:recommended",
+    "plugin:unicorn/recommended",
+    "plugin:import/recommended",
+    "plugin:n/recommended",
+    "plugin:promise/recommended",
+    "plugin:no-use-extend-native/recommended"
+  ],
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2022,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "reportUnusedDisableDirectives": true,
+  "ignorePatterns": [
+    "__snapshots__",
+    "node_modules",
+    "coverage",
+    "dist",
+    "lib",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".mjs"]
+      }
+    }
+  },
+  "rules": {
+    "no-alert": "error",
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "import/namespace": "off",
+    "import/default": "off",
+    "import/export": "off",
+    "import/named": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off"
+  }
+}

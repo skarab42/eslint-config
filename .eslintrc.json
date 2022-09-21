@@ -1,3 +1,16 @@
 {
-  "extends": ["./hardcore"]
+  "overrides": [
+    {
+      "files": ["**/*.{js,cjs,mjs}"],
+      "extends": ["./rc/javascript", "prettier"]
+    },
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "extends": ["./rc/typescript", "prettier"]
+    },
+    {
+      "files": ["**/*.test.*"],
+      "extends": ["./rc/test"]
+    }
+  ]
 }

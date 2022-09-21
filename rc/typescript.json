@@ -1,18 +1,40 @@
 {
   "$schema": "https://json.schemastore.org/eslintrc",
-  "plugins": ["eslint-plugin-no-explicit-type-exports"],
-  "extends": ["plugin:@typescript-eslint/strict"],
+  "extends": [
+    "./javascript",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/strict",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:etc/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaVersion": 2022,
     "sourceType": "module",
-    "ecmaVersion": "latest",
     "project": ["./tsconfig.json", "./tsconfig.*.json"]
   },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
   "rules": {
-    "no-unused-vars": "off",
+    "etc/no-t": "error",
+    "etc/no-const-enum": "error",
+    "etc/no-misused-generics": "warn",
+    "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/prefer-ts-expect-error": "warn",
-    "no-explicit-type-exports/no-explicit-type-exports": "error",
+    "@typescript-eslint/explicit-function-return-type": "warn",
     "dot-notation": "off",
-    "@typescript-eslint/dot-notation": ["error", { "allowIndexSignaturePropertyAccess": true }]
+    "@typescript-eslint/dot-notation": ["error", { "allowIndexSignaturePropertyAccess": true }],
+    "n/no-unsupported-features/es-syntax": "off"
   }
 }
