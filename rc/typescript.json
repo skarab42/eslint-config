@@ -3,6 +3,7 @@
   "extends": [
     "./javascript",
     "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/strict",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:etc/recommended"
