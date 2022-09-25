@@ -34,6 +34,7 @@
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/prefer-ts-expect-error": "warn",
     "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
     "dot-notation": "off",
     "@typescript-eslint/dot-notation": ["error", { "allowIndexSignaturePropertyAccess": true }],
     "n/no-unsupported-features/es-syntax": "off"
