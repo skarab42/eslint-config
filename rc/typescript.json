@@ -12,18 +12,16 @@
   "parserOptions": {
     "ecmaVersion": 2022,
     "sourceType": "module",
-    "project": ["./tsconfig.json", "./tsconfig.*.json"]
+    "project": ["**/tsconfig.json", "**/tsconfig.*.json"]
   },
   "settings": {
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
+      "@typescript-eslint/parser": [".ts", ".cts", ".mts", ".tsx"]
     },
     "import/resolver": {
-      "node": {
-        "extensions": [".ts", ".tsx"]
-      },
       "typescript": {
-        "alwaysTryTypes": true
+        "alwaysTryTypes": true,
+        "extensions": [".ts", ".cts", ".mts", ".tsx"]
       }
     }
   },
@@ -31,12 +29,12 @@
     "etc/no-t": "error",
     "etc/no-const-enum": "error",
     "etc/no-misused-generics": "warn",
+    "n/no-unsupported-features/es-syntax": "off",
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/prefer-ts-expect-error": "warn",
     "@typescript-eslint/explicit-function-return-type": "warn",
     "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
     "dot-notation": "off",
-    "@typescript-eslint/dot-notation": ["error", { "allowIndexSignaturePropertyAccess": true }],
-    "n/no-unsupported-features/es-syntax": "off"
+    "@typescript-eslint/dot-notation": ["error", { "allowIndexSignaturePropertyAccess": true }]
   }
 }

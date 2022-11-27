@@ -1,11 +1,11 @@
 {
   "overrides": [
     {
-      "files": ["**/*.{js,cjs,mjs}"],
+      "files": ["**/*.{js,cjs,mjs,jsx}"],
       "extends": ["./rc/javascript", "prettier"]
     },
     {
-      "files": ["**/*.{ts,tsx}"],
+      "files": ["**/*.{ts,cts,mts,tsx}"],
       "extends": ["./rc/typescript", "prettier"]
     },
     {
