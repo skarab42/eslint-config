@@ -33,6 +33,7 @@
     "no-console": "warn",
     "no-debugger": "warn",
     "import/namespace": "off",
+    "import/no-unresolved": "off",
     "sort-requires/sort-requires": "warn",
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "warn"
