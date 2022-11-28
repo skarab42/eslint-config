@@ -33,7 +33,14 @@
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/prefer-ts-expect-error": "warn",
     "@typescript-eslint/explicit-function-return-type": "warn",
-    "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+    "@typescript-eslint/consistent-type-definitions": [
+      "warn",
+      {
+        "prefer": "type-imports",
+        "disallowTypeAnnotations": true,
+        "fixStyle": "inline-type-imports"
+      }
+    ],
     "dot-notation": "off",
     "@typescript-eslint/dot-notation": ["error", { "allowIndexSignaturePropertyAccess": true }]
   }
