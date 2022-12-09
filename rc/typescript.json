@@ -32,7 +32,7 @@
     "n/no-unsupported-features/es-syntax": "off",
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/prefer-ts-expect-error": "warn",
-    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/explicit-function-return-type": ["warn", { "allowExpressions": true }],
     "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
     "@typescript-eslint/consistent-type-imports": [
       "warn",
