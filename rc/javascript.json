@@ -34,6 +34,7 @@
     "no-debugger": "warn",
     "import/namespace": "off",
     "import/no-unresolved": "off",
+    "import/no-named-as-default-member": "off",
     "sort-requires/sort-requires": "warn",
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "warn"
