@@ -19,10 +19,10 @@
     "access": "public"
   },
   "type": "module",
-  "main": ".eslintrc.json",
+  "main": "eslint.config.js",
+  "module": "eslint.config.js",
   "files": [
-    "rc",
-    ".eslintrc.json"
+    "eslint.config.js"
   ],
   "scripts": {
     "prepare": "npx simple-git-hooks",
@@ -31,20 +31,6 @@
     "semantic-release": "semantic-release --branches main"
   },
   "prettier": "@skarab/prettier-config",
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-etc": "^2.0.3",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.5.0",
-    "eslint-plugin-no-only-tests": "^3.1.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-sort-requires": "^2.1.0",
-    "eslint-plugin-unicorn": "^50.0.1"
-  },
   "devDependencies": {
     "@skarab/prettier-config": "^1.2.2",
     "eslint": "^8.56.0",
@@ -56,7 +42,7 @@
   },
   "peerDependencies": {
     "eslint": ">=8",
-    "typescript": ">=4"
+    "typescript": ">=5"
   },
   "engines": {
     "node": ">=18",
@@ -66,8 +52,6 @@
   "keywords": [
     "eslint",
     "config",
-    "eslint-config",
-    "typescript",
-    "hardcore"
+    "typescript"
   ]
 }
