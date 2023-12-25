@@ -12,18 +12,15 @@ jobs:
   publish:
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: ['14']
     name: Publish on NPM
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
-      - uses: pnpm/action-setup@v2.1.0
+          node-version: 18
+      - uses: pnpm/action-setup@v2
         with:
-          version: 7.6.0
+          version: 8
       - run: pnpm install
       - run: pnpm semantic-release
         env:
