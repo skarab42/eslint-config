@@ -30,7 +30,6 @@
     "format": "prettier **/* --write --cache --ignore-unknown",
     "semantic-release": "semantic-release --branches main"
   },
-  "prettier": "@skarab/prettier-config",
   "devDependencies": {
     "@skarab/prettier-config": "^1.2.2",
     "eslint": "^8.56.0",
