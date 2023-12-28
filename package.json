@@ -19,28 +19,39 @@
     "access": "public"
   },
   "type": "module",
-  "main": "eslint.config.js",
-  "module": "eslint.config.js",
+  "module": "./output/index.js",
+  "types": "./output/index.d.ts",
   "files": [
-    "eslint.config.js"
+    "output"
   ],
   "scripts": {
     "prepare": "npx simple-git-hooks",
-    "lint": "eslint . --max-warnings=0",
+    "lint": "eslint **/* --fix --cache --max-warnings=0",
     "format": "prettier **/* --write --cache --ignore-unknown",
+    "build": "rimraf ./output && tsc -p tsconfig.build.json",
     "semantic-release": "semantic-release --branches main"
+  },
+  "dependencies": {
+    "@eslint/js": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "globals": "^13.24.0"
   },
   "devDependencies": {
     "@skarab/prettier-config": "^1.2.2",
+    "@skarab/typescript-config": "^3.1.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.10.5",
     "eslint": "^8.56.0",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
     "semantic-release": "^22.0.12",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "eslint": ">=8",
+    "eslint": ">=8.2",
     "typescript": ">=5"
   },
   "engines": {
