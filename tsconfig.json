@@ -1,0 +1,7 @@
+{
+  "extends": "@skarab/typescript-config",
+  "include": ["./source"],
+  "compilerOptions": {
+    "noEmit": true
+  }
+}
