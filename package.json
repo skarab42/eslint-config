@@ -21,6 +21,12 @@
   "type": "module",
   "module": "./output/index.js",
   "types": "./output/index.d.ts",
+  "exports": {
+    ".": "./output/index.js",
+    "./configs": "./output/configs/index.js",
+    "./configs/*": "./output/configs/*.js",
+    "./configs/*.js": "./output/configs/*.js"
+  },
   "files": [
     "output"
   ],

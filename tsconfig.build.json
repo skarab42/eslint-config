@@ -2,6 +2,7 @@
   "extends": "@skarab/typescript-config",
   "include": ["./source"],
   "compilerOptions": {
-    "outDir": "./output"
+    "outDir": "./output",
+    "sourceMap": false
   }
 }
