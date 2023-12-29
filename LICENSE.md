@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2022 Sébastien Mischler <contact@skarab42.dev>
+Copyright (c) 2024 Sébastien Mischler <contact@skarab42.dev>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

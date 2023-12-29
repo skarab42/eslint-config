@@ -2,6 +2,10 @@
   "extends": "@skarab/typescript-config",
   "include": ["./source"],
   "compilerOptions": {
-    "noEmit": true
+    "noEmit": true,
+    "sourceMap": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "verbatimModuleSyntax": false
   }
 }
