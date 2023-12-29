@@ -1,4 +1,4 @@
 {
   "**/*": ["prettier --write --cache --ignore-unknown"],
-  "*.{js,ts}": ["eslint --fix --cache --max-warnings=0"]
+  "*.{js,cjs,mjs,jsx,cjsx,mjsx,ts,cts,mts,tsx,ctsx,mtsx}": ["eslint --fix --cache --max-warnings=0"]
 }
