@@ -1,11 +1,13 @@
 import { type ESLint } from 'eslint';
-import { ignorePatterns } from './utils/constants';
-import { type SourceType, type EcmaVersion, type ConfigOverride } from './utils/types';
-import { type EnvironmentOption } from './utils/environement';
-import { typescript } from './configs/typescript';
+
 import { ecmascript } from './configs/ecmascript';
-import { packageExists } from './utils/package-exists';
+import { importSort } from './configs/import-sort';
 import { imports } from './configs/imports';
+import { typescript } from './configs/typescript';
+import { ignorePatterns } from './utils/constants';
+import { type EnvironmentOption } from './utils/environement';
+import { packageExists } from './utils/package-exists';
+import { type ConfigOverride, type EcmaVersion, type SourceType } from './utils/types';
 
 export type ConfigOptions = {
   ts?: boolean | undefined;
@@ -26,7 +28,7 @@ export function config(options: ConfigOptions = {}): ESLint.ConfigData {
     ecmascriptOverrides.push(typescript(options));
   }
 
-  ecmascriptOverrides.push(imports({ ts, ...options }));
+  ecmascriptOverrides.push(imports({ ts, ...options }), importSort({ ts, ...options }));
 
   return {
     reportUnusedDisableDirectives,
