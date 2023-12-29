@@ -7,12 +7,11 @@ export type EcmascriptFilesOptions = {
   jsx?: boolean | undefined;
 };
 
-export type EcmascriptOptions = {
+export type EcmascriptOptions = EcmascriptFilesOptions & {
   rules?: RulesRecord | undefined;
   globals?: GlobalsEnvironment[] | undefined;
   ecmaVersion?: ParserOptions['ecmaVersion'];
   sourceType?: 'module' | 'commonjs' | undefined;
-  filesOptions?: EcmascriptFilesOptions | undefined;
 };
 
 export function ecmascriptFiles(options: EcmascriptFilesOptions = {}): string[] {
@@ -24,12 +23,12 @@ export function ecmascriptFiles(options: EcmascriptFilesOptions = {}): string[] 
 export function ecmascript(options: EcmascriptOptions = {}): FlatConfig[] {
   const {
     rules = {},
-    filesOptions = {},
-    sourceType = 'module',
+    ts = false,
+    jsx = false,
     ecmaVersion = 2022,
+    sourceType = 'module',
     globals = ['node', 'browser'],
   } = options;
-  const { ts = false, jsx = false } = filesOptions;
 
   globals.unshift(`es${ecmaVersion}`);
 
