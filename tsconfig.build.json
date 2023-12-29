@@ -1,8 +1,8 @@
 {
-  "extends": "@skarab/typescript-config",
+  "extends": "./tsconfig.json",
   "include": ["./source"],
   "compilerOptions": {
-    "outDir": "./output",
-    "sourceMap": false
+    "noEmit": false,
+    "outDir": "./output"
   }
 }
