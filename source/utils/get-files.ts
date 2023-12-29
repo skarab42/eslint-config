@@ -17,8 +17,8 @@ export function getFiles(options: ConfigOptions): ConfigFiles {
   const ecmascriptFiles = javascriptFiles;
 
   if (options.jsx) {
-    javascriptFiles.push(...javascriptFiles);
-    typescriptFiles.push(...typescriptFiles);
+    javascriptFiles.push(...wildcard(constants.jsxExtensions));
+    typescriptFiles.push(...wildcard(constants.tsxExtensions));
   }
 
   if (options.ts) {
