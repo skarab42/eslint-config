@@ -1,21 +1,20 @@
+import { type ConfigOptions } from '../config';
 import * as constants from './constants';
 
-export type GetFilesOptions = { ts: boolean; jsx: boolean };
-
-export type GetFilesResult = {
+export type ConfigFiles = {
   javascriptFiles: string[];
   typescriptFiles: string[];
-  scriptFiles: string[];
+  ecmascriptFiles: string[];
 };
 
 function wildcard(extensions: readonly string[]): string[] {
   return extensions.map((ext) => `*${ext}`);
 }
 
-export function getFiles(options: GetFilesOptions): GetFilesResult {
+export function getFiles(options: ConfigOptions): ConfigFiles {
   const javascriptFiles = wildcard(constants.jsExtensions);
   const typescriptFiles = wildcard(constants.tsExtensions);
-  const scriptFiles = javascriptFiles;
+  const ecmascriptFiles = javascriptFiles;
 
   if (options.jsx) {
     javascriptFiles.push(...javascriptFiles);
@@ -23,8 +22,8 @@ export function getFiles(options: GetFilesOptions): GetFilesResult {
   }
 
   if (options.ts) {
-    scriptFiles.push(...typescriptFiles);
+    ecmascriptFiles.push(...typescriptFiles);
   }
 
-  return { scriptFiles, javascriptFiles, typescriptFiles };
+  return { javascriptFiles, typescriptFiles, ecmascriptFiles };
 }
