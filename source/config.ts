@@ -5,6 +5,7 @@ import { type EnvironmentOption } from './utils/environement';
 import { typescript } from './configs/typescript';
 import { ecmascript } from './configs/ecmascript';
 import { packageExists } from './utils/package-exists';
+import { imports } from './configs/imports';
 
 export type ConfigOptions = {
   ts?: boolean | undefined;
@@ -24,6 +25,8 @@ export function config(options: ConfigOptions = {}): ESLint.ConfigData {
   if (ts) {
     ecmascriptOverrides.push(typescript(options));
   }
+
+  ecmascriptOverrides.push(imports({ ts, ...options }));
 
   return {
     reportUnusedDisableDirectives,
