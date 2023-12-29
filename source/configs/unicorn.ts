@@ -3,12 +3,10 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import type { ESLintPlugin, FlatConfig, RulesRecord } from '../common/types.js';
 import { ecmascriptFiles, type EcmascriptFilesOptions } from './ecmascript.js';
 
-export type UnicornOptions = {
-  filesOptions?: EcmascriptFilesOptions | undefined;
-};
+export type UnicornOptions = EcmascriptFilesOptions;
 
 export function unicorn(options: UnicornOptions = {}): FlatConfig[] {
-  const { ts = false, jsx = false } = options.filesOptions ?? {};
+  const { ts = false, jsx = false } = options;
 
   return [
     {

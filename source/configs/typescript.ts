@@ -1,15 +1,16 @@
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-import type { ESLintPlugin, FlatConfig, ParserModule, RulesRecord } from '../common/types.js';
+import type { ESLintPlugin, FlatConfig, ParserModule, ParserOptions, RulesRecord } from '../common/types.js';
 
 export type TypescriptFilesOptions = {
   jsx?: boolean | undefined;
 };
 
-export type TypescriptOptions = {
+export type TypescriptOptions = TypescriptFilesOptions & {
   rules?: RulesRecord | undefined;
   tsconfigPath?: string | string[] | undefined;
-  filesOptions?: TypescriptFilesOptions | undefined;
+  ecmaVersion?: ParserOptions['ecmaVersion'];
+  sourceType?: 'module' | 'commonjs' | undefined;
 };
 
 export function typescriptFiles(options: TypescriptFilesOptions = {}): string[] {
@@ -19,8 +20,13 @@ export function typescriptFiles(options: TypescriptFilesOptions = {}): string[] 
 }
 
 export function typescript(options: TypescriptOptions = {}): FlatConfig[] {
-  const { rules = {}, tsconfigPath = ['**/tsconfig.json', '**/tsconfig.*.json'], filesOptions = {} } = options;
-  const { jsx = false } = filesOptions;
+  const {
+    rules = {},
+    jsx = false,
+    ecmaVersion = 2022,
+    sourceType = 'module',
+    tsconfigPath = ['**/tsconfig.json', '**/tsconfig.*.json'],
+  } = options;
 
   const resetRules = (tsPlugin.configs['eslint-recommended']?.rules ?? {}) as RulesRecord;
   const strictRules = tsPlugin.configs['strict-type-checked']?.rules as RulesRecord;
@@ -32,9 +38,12 @@ export function typescript(options: TypescriptOptions = {}): FlatConfig[] {
         '@typescript-eslint': tsPlugin as unknown as ESLintPlugin,
       },
       languageOptions: {
+        sourceType,
+        ecmaVersion,
         parser: tsParser as ParserModule,
         parserOptions: {
-          sourceType: 'module',
+          ecmaVersion,
+          sourceType: sourceType === 'module' ? 'module' : 'script',
           project: tsconfigPath,
           tsconfigRootDir: process.cwd(),
         },
