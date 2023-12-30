@@ -1,7 +1,7 @@
 import { type ESLint } from 'eslint';
 
 import { ignorePatterns } from './constants';
-import { ecmascript, imports, importSort, prettier, typescript, unicorn } from './overrides';
+import { ecmascript, imports, importSort, node as nodeOverride, prettier, typescript, unicorn } from './overrides';
 import { type ConfigOverride, type EcmaVersion, type SourceType } from './types';
 import { type EnvironmentOption, packageExists } from './utils';
 
@@ -18,10 +18,19 @@ export type ConfigOptions = {
 };
 
 export function config(options: ConfigOptions = {}): ESLint.ConfigData {
-  const { ts = packageExists('typescript'), ignores = ignorePatterns, reportUnusedDisableDirectives = true } = options;
+  const {
+    node = true,
+    ignores = ignorePatterns,
+    ts = packageExists('typescript'),
+    reportUnusedDisableDirectives = true,
+  } = options;
 
-  const pluginOptions = { ts, ...options };
+  const pluginOptions = { node, ts, ...options };
   const ecmascriptOverrides: ConfigOverride[] = [];
+
+  if (node) {
+    ecmascriptOverrides.push(nodeOverride(pluginOptions));
+  }
 
   if (ts) {
     ecmascriptOverrides.push(typescript(pluginOptions));
