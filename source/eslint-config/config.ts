@@ -7,6 +7,7 @@ import {
   importSort,
   json,
   node as nodeOverride,
+  noOnlyTests,
   prettier,
   promise,
   sonarjs,
@@ -54,6 +55,7 @@ export function config(options: ConfigOptions = {}): ESLint.ConfigData {
     unicorn(pluginOptions),
     promise(pluginOptions),
     sonarjs(pluginOptions),
+    noOnlyTests(),
     // Turns off all rules that are unnecessary or might conflict with Prettier.
     // Prettier should be last, so it gets the chance to override other configs.
     prettier(pluginOptions),

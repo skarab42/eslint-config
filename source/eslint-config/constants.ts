@@ -4,6 +4,7 @@ export const tsExtensions = ['.ts', '.cts', '.mts'] as const;
 export const tsxExtensions = ['.tsx', '.ctsx', '.mtsx'] as const;
 export const jsonExtensions = ['*.json', '*.json5', '*.jsonc'] as const;
 export const yamlExtensions = ['*.yml', '*.yaml'] as const;
+export const testExtensions = ['*.test.*', '*.spec.*'] as const;
 export const ignorePatterns = [
   '**/node_modules',
   '**/package-lock.json',
