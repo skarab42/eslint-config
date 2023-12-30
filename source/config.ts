@@ -3,6 +3,7 @@ import { type ESLint } from 'eslint';
 import { ecmascript } from './configs/ecmascript';
 import { importSort } from './configs/import-sort';
 import { imports } from './configs/imports';
+import { prettier } from './configs/prettier';
 import { typescript } from './configs/typescript';
 import { unicorn } from './configs/unicorn';
 import { ignorePatterns } from './utils/constants';
@@ -30,7 +31,14 @@ export function config(options: ConfigOptions = {}): ESLint.ConfigData {
     ecmascriptOverrides.push(typescript(pluginOptions));
   }
 
-  ecmascriptOverrides.push(imports(pluginOptions), importSort(pluginOptions), unicorn(pluginOptions));
+  ecmascriptOverrides.push(
+    imports(pluginOptions),
+    importSort(pluginOptions),
+    unicorn(pluginOptions),
+    // Turns off all rules that are unnecessary or might conflict with Prettier.
+    // Prettier should be last, so it gets the chance to override other configs.
+    prettier(pluginOptions),
+  );
 
   return {
     reportUnusedDisableDirectives,
