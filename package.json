@@ -68,5 +68,17 @@
     "eslint",
     "config",
     "typescript"
-  ]
+  ],
+  "prettier": "@skarab/prettier-config",
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --cache --ignore-unknown"
+    ],
+    "*.{js,cjs,mjs,jsx,cjsx,mjsx,ts,cts,mts,tsx,ctsx,mtsx}": [
+      "eslint --fix --cache --max-warnings=0"
+    ]
+  }
 }
