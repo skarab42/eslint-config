@@ -4,6 +4,7 @@ import { ecmascript } from './configs/ecmascript';
 import { importSort } from './configs/import-sort';
 import { imports } from './configs/imports';
 import { typescript } from './configs/typescript';
+import { unicorn } from './configs/unicorn';
 import { ignorePatterns } from './utils/constants';
 import { type EnvironmentOption } from './utils/environement';
 import { packageExists } from './utils/package-exists';
@@ -28,7 +29,7 @@ export function config(options: ConfigOptions = {}): ESLint.ConfigData {
     ecmascriptOverrides.push(typescript(options));
   }
 
-  ecmascriptOverrides.push(imports({ ts, ...options }), importSort({ ts, ...options }));
+  ecmascriptOverrides.push(imports({ ts, ...options }), importSort({ ts, ...options }), unicorn({ ts, ...options }));
 
   return {
     reportUnusedDisableDirectives,

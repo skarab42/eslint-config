@@ -8,7 +8,7 @@ export type ConfigFiles = {
 };
 
 function wildcard(extensions: readonly string[]): string[] {
-  return extensions.map((ext) => `*${ext}`);
+  return extensions.map((extension) => `*${extension}`);
 }
 
 export function getFiles(options: ConfigOptions): ConfigFiles {
