@@ -1,3 +1,3 @@
 const { config } = require('./output');
 
-module.exports = config({ environments: ['node', 'browser'] });
+module.exports = config({ type: 'commonjs', environments: ['node', 'browser'] });
