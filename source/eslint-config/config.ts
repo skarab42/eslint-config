@@ -8,6 +8,8 @@ import { type EnvironmentOption, packageExists } from './utils';
 export type ConfigOptions = {
   ts?: boolean | undefined;
   jsx?: boolean | undefined;
+  node?: boolean | undefined;
+  browser?: boolean | undefined;
   type?: SourceType | undefined;
   ecmaVersion?: EcmaVersion | undefined;
   reportUnusedDisableDirectives?: boolean;
