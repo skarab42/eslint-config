@@ -1,6 +1,6 @@
 import { type ConfigOptions } from '../config';
-import { getFiles } from '../utils/get-files';
-import { type ConfigOverride } from '../utils/types';
+import { type ConfigOverride } from '../types';
+import { getFiles } from '../utils';
 
 export function importSort(options: ConfigOptions = {}): ConfigOverride {
   const { ts = false, jsx = false } = options;

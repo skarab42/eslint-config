@@ -1,7 +1,7 @@
 import { type ConfigOptions } from '../config';
-import * as constants from '../utils/constants';
-import { getFiles } from '../utils/get-files';
-import { type ConfigOverride } from '../utils/types';
+import * as constants from '../constants';
+import { type ConfigOverride } from '../types';
+import { getFiles } from '../utils';
 
 export function imports(options: ConfigOptions = {}): ConfigOverride {
   const { ts = false, jsx = false } = options;

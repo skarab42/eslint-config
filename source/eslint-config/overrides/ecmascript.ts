@@ -1,7 +1,6 @@
 import { type ConfigOptions } from '../config';
-import { environment, type EnvironmentName } from '../utils/environement';
-import { getFiles } from '../utils/get-files';
-import { type ConfigOverride } from '../utils/types';
+import { type ConfigOverride } from '../types';
+import { environment, type EnvironmentName, getFiles } from '../utils';
 
 export function ecmascript(options: ConfigOptions = {}): ConfigOverride {
   const { ts = false, jsx = false, type = 'module', ecmaVersion = 2022, environments = ['node'] } = options;
