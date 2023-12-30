@@ -19,8 +19,8 @@
     "access": "public"
   },
   "type": "commonjs",
-  "main": "./output/index.js",
-  "types": "./output/index.d.ts",
+  "main": "./output/eslint-config/index.js",
+  "types": "./output/eslint-config/index.d.ts",
   "bin": {
     "eslint-staged": "./output/eslint-staged/index.js"
   },
