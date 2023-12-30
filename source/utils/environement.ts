@@ -46,7 +46,7 @@ export type EnvironmentName = EnvironmentFromGlobalsPackage | MissingEnvironment
 
 export type EnvironmentOption = Exclude<
   EnvironmentName,
-  EsEnvironmentFromGlobalsPackage | MissingEnvironmentFromGlobalsPackage
+  'commonjs' | EsEnvironmentFromGlobalsPackage | MissingEnvironmentFromGlobalsPackage
 >;
 
 export const latest = 'es2024';

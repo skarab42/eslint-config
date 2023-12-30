@@ -13,7 +13,7 @@ import { type ConfigOverride, type EcmaVersion, type SourceType } from './utils/
 export type ConfigOptions = {
   ts?: boolean | undefined;
   jsx?: boolean | undefined;
-  sourceType?: SourceType | undefined;
+  type?: SourceType | undefined;
   ecmaVersion?: EcmaVersion | undefined;
   reportUnusedDisableDirectives?: boolean;
   ignores?: readonly string[] | undefined;
