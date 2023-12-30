@@ -55,6 +55,9 @@ export function environment<Environment extends EnvironmentName>(
   environments: Environment[] = [],
 ): Record<Environment, true> {
   return Object.fromEntries(
-    environments.map((environment) => [environment === 'eslatest' ? latest : environment, true]),
+    environments.map((environment) => {
+      environment = environment.toLocaleLowerCase() as Environment;
+      return [environment === 'eslatest' ? latest : environment, true];
+    }),
   ) as Record<Environment, true>;
 }
