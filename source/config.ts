@@ -23,20 +23,21 @@ export type ConfigOptions = {
 export function config(options: ConfigOptions = {}): ESLint.ConfigData {
   const { ts = packageExists('typescript'), ignores = ignorePatterns, reportUnusedDisableDirectives = true } = options;
 
+  const pluginOptions = { ts, ...options };
   const ecmascriptOverrides: ConfigOverride[] = [];
 
   if (ts) {
-    ecmascriptOverrides.push(typescript(options));
+    ecmascriptOverrides.push(typescript(pluginOptions));
   }
 
-  ecmascriptOverrides.push(imports({ ts, ...options }), importSort({ ts, ...options }), unicorn({ ts, ...options }));
+  ecmascriptOverrides.push(imports(pluginOptions), importSort(pluginOptions), unicorn(pluginOptions));
 
   return {
     reportUnusedDisableDirectives,
     ignorePatterns: [...ignores],
     overrides: [
       {
-        ...ecmascript({ ts, ...options }),
+        ...ecmascript(pluginOptions),
         overrides: ecmascriptOverrides,
       },
     ],
