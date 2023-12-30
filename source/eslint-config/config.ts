@@ -1,11 +1,11 @@
 import { type ESLint } from 'eslint';
 
-import { ecmascript } from './configs/ecmascript';
-import { importSort } from './configs/import-sort';
-import { imports } from './configs/imports';
-import { prettier } from './configs/prettier';
-import { typescript } from './configs/typescript';
-import { unicorn } from './configs/unicorn';
+import { ecmascript } from './overrides/ecmascript';
+import { importSort } from './overrides/import-sort';
+import { imports } from './overrides/imports';
+import { prettier } from './overrides/prettier';
+import { typescript } from './overrides/typescript';
+import { unicorn } from './overrides/unicorn';
 import { ignorePatterns } from './utils/constants';
 import { type EnvironmentOption } from './utils/environement';
 import { packageExists } from './utils/package-exists';
