@@ -1,3 +1,3 @@
-const { config } = require('./output/eslint-config/config');
-
-module.exports = config({ type: 'commonjs', environments: ['node', 'browser'] });
+module.exports = {
+  extends: ['@skarab/eslint-config/configs/recommended-commonjs'],
+};
