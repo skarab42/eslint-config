@@ -42,15 +42,19 @@ export type MissingEnvironmentFromGlobalsPackage =
   | 'es2024'
   | 'eslatest';
 
-export type Environment = EnvironmentFromGlobalsPackage | MissingEnvironmentFromGlobalsPackage;
+export type EnvironmentName = EnvironmentFromGlobalsPackage | MissingEnvironmentFromGlobalsPackage;
 
 export type EnvironmentOption = Exclude<
-  Environment,
+  EnvironmentName,
   EsEnvironmentFromGlobalsPackage | MissingEnvironmentFromGlobalsPackage
 >;
 
 export const latest = 'es2024';
 
-export function environment<Env extends Environment>(environments: Env[] = []): Record<Env, true> {
-  return Object.fromEntries(environments.map((env) => [env === 'eslatest' ? latest : env, true])) as Record<Env, true>;
+export function environment<Environment extends EnvironmentName>(
+  environments: Environment[] = [],
+): Record<Environment, true> {
+  return Object.fromEntries(
+    environments.map((environment) => [environment === 'eslatest' ? latest : environment, true]),
+  ) as Record<Environment, true>;
 }
