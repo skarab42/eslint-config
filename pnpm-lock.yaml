@@ -32,6 +32,9 @@ dependencies:
   eslint-plugin-promise:
     specifier: ^6.1.1
     version: 6.1.1(eslint@8.56.0)
+  eslint-plugin-require-sort:
+    specifier: ^1.3.0
+    version: 1.3.0
   eslint-plugin-simple-import-sort:
     specifier: ^10.0.0
     version: 10.0.0(eslint@8.56.0)
@@ -1243,6 +1246,10 @@ packages:
       eslint: ^7.0.0 || ^8.0.0
     dependencies:
       eslint: 8.56.0
+    dev: false
+
+  /eslint-plugin-require-sort@1.3.0:
+    resolution: {integrity: sha512-uGyXChANR0kO9SWqZDrZquyVfYQCydovKGjM7zCo+rZE2l3eoWXkNDVZC4JaHYANJ9m5fJ5QE/5kcWHGJLofSQ==}
     dev: false
 
   /eslint-plugin-simple-import-sort@10.0.0(eslint@8.56.0):
