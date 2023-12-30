@@ -5,6 +5,7 @@ import {
   ecmascript,
   imports,
   importSort,
+  json,
   node as nodeOverride,
   prettier,
   promise,
@@ -63,6 +64,7 @@ export function config(options: ConfigOptions = {}): ESLint.ConfigData {
         ...ecmascript(pluginOptions),
         overrides: ecmascriptOverrides,
       },
+      json(),
     ],
   };
 }
