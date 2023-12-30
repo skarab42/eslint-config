@@ -1,7 +1,16 @@
 import { type ESLint } from 'eslint';
 
 import { ignorePatterns } from './constants';
-import { ecmascript, imports, importSort, node as nodeOverride, prettier, typescript, unicorn } from './overrides';
+import {
+  ecmascript,
+  imports,
+  importSort,
+  node as nodeOverride,
+  prettier,
+  promise,
+  typescript,
+  unicorn,
+} from './overrides';
 import { type ConfigOverride, type EcmaVersion, type SourceType } from './types';
 import { type EnvironmentOption, packageExists } from './utils';
 
@@ -40,6 +49,7 @@ export function config(options: ConfigOptions = {}): ESLint.ConfigData {
     imports(pluginOptions),
     importSort(pluginOptions),
     unicorn(pluginOptions),
+    promise(pluginOptions),
     // Turns off all rules that are unnecessary or might conflict with Prettier.
     // Prettier should be last, so it gets the chance to override other configs.
     prettier(pluginOptions),
