@@ -2,25 +2,24 @@
   "name": "@skarab/eslint-config",
   "description": "My ESLint config",
   "version": "0.0.0-development",
+  "license": "MIT",
   "author": {
     "name": "skarab42",
     "email": "contact@skarab42.dev"
   },
+  "funding": "https://github.com/sponsors/skarab42",
+  "homepage": "https://github.com/skarab42/eslint-config",
   "repository": {
     "type": "git",
     "url": "https://github.com/skarab42/eslint-config.git"
   },
-  "homepage": "https://github.com/skarab42/eslint-config",
   "bugs": "https://github.com/skarab42/eslint-config/issues",
-  "funding": "https://github.com/sponsors/skarab42",
-  "license": "MIT",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
   "type": "commonjs",
   "main": "./output/eslint-config/index.js",
   "types": "./output/eslint-config/index.d.ts",
+  "bin": {
+    "eslint-staged": "./output/eslint-staged/index.js"
+  },
   "exports": {
     ".": "./output/eslint-config/index.js",
     "./recommended": "./output/eslint-config/configs/recommended.js",
@@ -32,11 +31,17 @@
     "./overrides/*.js": "./output/eslint-config/overrides/*.js",
     "./package.json": "./package.json"
   },
-  "bin": {
-    "eslint-staged": "./output/eslint-staged/index.js"
+  "private": false,
+  "publishConfig": {
+    "access": "public"
   },
   "files": [
     "output"
+  ],
+  "keywords": [
+    "eslint",
+    "config",
+    "typescript"
   ],
   "scripts": {
     "prepare": "npx simple-git-hooks",
@@ -47,6 +52,10 @@
     "build": "rimraf ./output && tsc -p tsconfig.build.json",
     "semantic-release": "semantic-release --branches main",
     "eslint-staged": "node ./output/eslint-staged/index.js"
+  },
+  "peerDependencies": {
+    "eslint": ">=8",
+    "typescript": ">=5"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.16.0",
@@ -77,28 +86,19 @@
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.3.3"
   },
-  "peerDependencies": {
-    "eslint": ">=8",
-    "typescript": ">=5"
-  },
   "engines": {
     "node": ">=18",
     "pnpm": ">=8"
   },
   "packageManager": "pnpm@8.12.1",
-  "keywords": [
-    "eslint",
-    "config",
-    "typescript"
-  ],
   "prettier": "@skarab/prettier-config",
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
   "lint-staged": {
     "*": [
       "pnpm eslint-staged --fix --max-warnings=0",
       "pnpm prettier --write --ignore-unknown"
     ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
   }
 }
