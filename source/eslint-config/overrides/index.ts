@@ -4,6 +4,7 @@ export * from './imports';
 export * from './json';
 export * from './no-only-tests';
 export * from './node';
+export * from './package-json';
 export * from './prettier';
 export * from './promise';
 export * from './require-sort';
