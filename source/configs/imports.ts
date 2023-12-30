@@ -6,14 +6,12 @@ import { type ConfigOverride } from '../utils/types';
 export function imports(options: ConfigOptions = {}): ConfigOverride {
   const { ts = false, jsx = false } = options;
 
-  const files = getFiles({ ts, jsx }).ecmascriptFiles;
-
   const allJsExtensions = [...constants.jsExtensions, ...constants.jsxExtensions];
   const allTsExtensions = [...constants.tsExtensions, ...constants.tsxExtensions];
 
   if (ts === false) {
     return {
-      files,
+      files: getFiles({ ts, jsx }).ecmascriptFiles,
       extends: ['plugin:import/recommended'],
       settings: {
         'import/resolver': {
@@ -24,7 +22,7 @@ export function imports(options: ConfigOptions = {}): ConfigOverride {
   }
 
   return {
-    files,
+    files: getFiles({ ts, jsx }).ecmascriptFiles,
     extends: ['plugin:import/recommended', 'plugin:import/typescript'],
     settings: {
       'import/parsers': {
