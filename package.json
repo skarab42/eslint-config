@@ -21,17 +21,21 @@
   "type": "commonjs",
   "main": "./output/index.js",
   "types": "./output/index.d.ts",
+  "bin": {
+    "eslint-staged": "./output/eslint-staged/index.js"
+  },
   "files": [
     "output"
   ],
   "scripts": {
     "prepare": "npx simple-git-hooks",
-    "lint": "eslint **/* --cache --max-warnings=0",
+    "lint": "eslint **/* --max-warnings=0",
     "lint:fix": "pnpm lint --fix",
-    "format": "prettier **/* --cache --ignore-unknown",
+    "format": "prettier **/* --ignore-unknown",
     "format:write": "pnpm format --write",
     "build": "rimraf ./output && tsc -p tsconfig.build.json",
-    "semantic-release": "semantic-release --branches main"
+    "semantic-release": "semantic-release --branches main",
+    "eslint-staged": "node ./output/eslint-staged/index.js"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.16.0",
@@ -46,7 +50,7 @@
     "@skarab/prettier-config": "^1.2.2",
     "@skarab/typescript-config": "^3.1.0",
     "@types/eslint": "^8.56.0",
-    "@types/node": "^20.10.5",
+    "@types/node": "^20.10.6",
     "eslint": "^8.56.0",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.1",
@@ -75,10 +79,8 @@
   },
   "lint-staged": {
     "*": [
-      "prettier --write --cache --ignore-unknown"
-    ],
-    "*.{js,cjs,mjs,jsx,cjsx,mjsx,ts,cts,mts,tsx,ctsx,mtsx}": [
-      "eslint --fix --cache --max-warnings=0"
+      "pnpm eslint-staged --fix --max-warnings=0",
+      "pnpm prettier --write --ignore-unknown"
     ]
   }
 }

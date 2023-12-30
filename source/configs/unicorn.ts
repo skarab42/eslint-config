@@ -12,6 +12,7 @@ export function unicorn(options: ConfigOptions = {}): ConfigOverride {
     extends: ['plugin:unicorn/recommended'],
     rules: {
       'unicorn/prefer-module': commonjs ? 'off' : 'error',
+      'unicorn/prefer-top-level-await': commonjs ? 'off' : 'error',
     },
   };
 }
