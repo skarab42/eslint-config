@@ -11,6 +11,7 @@ import {
   promise,
   typescript,
   unicorn,
+  yaml,
 } from './overrides';
 import { type ConfigOverride, type EcmaVersion, type SourceType } from './types';
 import { type EnvironmentOption, packageExists } from './utils';
@@ -65,6 +66,7 @@ export function config(options: ConfigOptions = {}): ESLint.ConfigData {
         overrides: ecmascriptOverrides,
       },
       json(),
+      yaml(),
     ],
   };
 }

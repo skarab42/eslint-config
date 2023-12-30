@@ -16,5 +16,4 @@ export const ignorePatterns = [
   '**/__snapshots__',
   // TODO: remove when handled by eslint plugins
   '*.md',
-  '*.yaml',
 ] as const;

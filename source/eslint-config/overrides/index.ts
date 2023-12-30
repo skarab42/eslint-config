@@ -7,3 +7,4 @@ export * from './prettier';
 export * from './promise';
 export * from './typescript';
 export * from './unicorn';
+export * from './yaml';
