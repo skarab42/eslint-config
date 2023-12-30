@@ -58,7 +58,8 @@
     "eslint-plugin-n": "^16.6.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-unicorn": "^50.0.1"
+    "eslint-plugin-unicorn": "^50.0.1",
+    "eslint-plugin-yml": "^1.11.0"
   },
   "devDependencies": {
     "@skarab/prettier-config": "^1.2.2",
