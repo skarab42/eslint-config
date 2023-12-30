@@ -10,6 +10,7 @@ import {
   noOnlyTests,
   prettier,
   promise,
+  requireSort,
   sonarjs,
   typescript,
   unicorn,
@@ -33,6 +34,7 @@ export type ConfigOptions = {
 export function config(options: ConfigOptions = {}): ESLint.ConfigData {
   const {
     node = true,
+    type = 'module',
     ignores = ignorePatterns,
     ts = packageExists('typescript'),
     reportUnusedDisableDirectives = true,
@@ -41,17 +43,23 @@ export function config(options: ConfigOptions = {}): ESLint.ConfigData {
   const pluginOptions = { node, ts, ...options };
   const ecmascriptOverrides: ConfigOverride[] = [];
 
-  if (node) {
-    ecmascriptOverrides.push(nodeOverride(pluginOptions));
-  }
-
   if (ts) {
     ecmascriptOverrides.push(typescript(pluginOptions));
   }
 
+  if (node) {
+    ecmascriptOverrides.push(nodeOverride(pluginOptions));
+  }
+
+  if (type === 'commonjs') {
+    ecmascriptOverrides.push(requireSort(pluginOptions));
+  }
+
+  if (ts || type === 'module') {
+    ecmascriptOverrides.push(imports(pluginOptions), importSort(pluginOptions));
+  }
+
   ecmascriptOverrides.push(
-    imports(pluginOptions),
-    importSort(pluginOptions),
     unicorn(pluginOptions),
     promise(pluginOptions),
     sonarjs(pluginOptions),
