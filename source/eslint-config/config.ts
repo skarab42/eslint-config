@@ -1,15 +1,9 @@
 import { type ESLint } from 'eslint';
 
-import { ecmascript } from './overrides/ecmascript';
-import { importSort } from './overrides/import-sort';
-import { imports } from './overrides/imports';
-import { prettier } from './overrides/prettier';
-import { typescript } from './overrides/typescript';
-import { unicorn } from './overrides/unicorn';
-import { ignorePatterns } from './utils/constants';
-import { type EnvironmentOption } from './utils/environement';
-import { packageExists } from './utils/package-exists';
-import { type ConfigOverride, type EcmaVersion, type SourceType } from './utils/types';
+import { ignorePatterns } from './constants';
+import { ecmascript, imports, importSort, prettier, typescript, unicorn } from './overrides';
+import { type ConfigOverride, type EcmaVersion, type SourceType } from './types';
+import { type EnvironmentOption, packageExists } from './utils';
 
 export type ConfigOptions = {
   ts?: boolean | undefined;

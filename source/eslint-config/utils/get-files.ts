@@ -1,5 +1,5 @@
 import { type ConfigOptions } from '../config';
-import * as constants from './constants';
+import { jsExtensions, jsxExtensions, tsExtensions, tsxExtensions } from '../constants';
 
 export type ConfigFiles = {
   javascriptFiles: string[];
@@ -12,13 +12,13 @@ function wildcard(extensions: readonly string[]): string[] {
 }
 
 export function getFiles(options: ConfigOptions): ConfigFiles {
-  const javascriptFiles = wildcard(constants.jsExtensions);
-  const typescriptFiles = wildcard(constants.tsExtensions);
+  const javascriptFiles = wildcard(jsExtensions);
+  const typescriptFiles = wildcard(tsExtensions);
   const ecmascriptFiles = javascriptFiles;
 
   if (options.jsx) {
-    javascriptFiles.push(...wildcard(constants.jsxExtensions));
-    typescriptFiles.push(...wildcard(constants.tsxExtensions));
+    javascriptFiles.push(...wildcard(jsxExtensions));
+    typescriptFiles.push(...wildcard(tsxExtensions));
   }
 
   if (options.ts) {
