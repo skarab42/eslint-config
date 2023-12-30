@@ -21,6 +21,17 @@
   "type": "commonjs",
   "main": "./output/eslint-config/index.js",
   "types": "./output/eslint-config/index.d.ts",
+  "exports": {
+    ".": "./output/eslint-config/index.js",
+    "./recommended": "./output/eslint-config/configs/recommended.js",
+    "./configs": "./output/eslint-config/configs/index.js",
+    "./configs/*": "./output/eslint-config/configs/*.js",
+    "./configs/*.js": "./output/eslint-config/configs/*.js",
+    "./overrides": "./output/eslint-config/overrides/index.js",
+    "./overrides/*": "./output/eslint-config/overrides/*.js",
+    "./overrides/*.js": "./output/eslint-config/overrides/*.js",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "eslint-staged": "./output/eslint-staged/index.js"
   },
