@@ -53,12 +53,13 @@ export function packageJson(): ConfigOverride {
             'pnpm',
             'engines',
             'packageManager',
+            
+            'prettier',
+            'eslintConfig',
 
             'husky',
-            'prettier',
             'lint-staged',
             'simple-git-hooks',
-            'eslintConfig',
           ],
           pathPattern: '^$',
         },
