@@ -45,7 +45,7 @@
   ],
   "scripts": {
     "prepare": "npx simple-git-hooks",
-    "lint": "eslint **/* --max-warnings=0",
+    "lint": "eslint . --max-warnings=0",
     "lint:fix": "pnpm lint --fix",
     "format": "prettier **/* --ignore-unknown",
     "format:write": "pnpm format --write",
