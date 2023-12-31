@@ -19,4 +19,5 @@ export const ignorePatterns = [
   '**/output',
   '**/coverage',
   '**/__snapshots__',
+  '*.md',
 ] as const;
