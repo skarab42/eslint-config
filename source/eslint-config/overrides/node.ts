@@ -12,6 +12,7 @@ export function node(options: ConfigOptions = {}): ConfigOverride {
     extends: [`plugin:n/recommended-${sourceType}`],
     rules: {
       'n/no-missing-import': 'off', // same as import/no-unresolved
+      'n/no-process-exit': 'off', // same as unicorn/no-process-exit
     },
   };
 }
