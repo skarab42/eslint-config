@@ -49,6 +49,9 @@ dependencies:
     version: 1.11.0(eslint@8.56.0)
 
 devDependencies:
+  '@skarab/eslint-staged':
+    specifier: ^1.0.0
+    version: 1.0.0(eslint@8.56.0)
   '@skarab/prettier-config':
     specifier: ^1.2.2
     version: 1.2.2(prettier@3.1.1)
@@ -421,6 +424,16 @@ packages:
   /@sindresorhus/merge-streams@1.0.0:
     resolution: {integrity: sha512-rUV5WyJrJLoloD4NDN1V1+LDMDWOa4OTsT4yYJwQNpTU6FWxkxHpL7eu4w+DmiH8x/EAM1otkPE1+LaspIbplw==}
     engines: {node: '>=18'}
+    dev: true
+
+  /@skarab/eslint-staged@1.0.0(eslint@8.56.0):
+    resolution: {integrity: sha512-tuZynMBxiCQwOKrJpVx6R3NibO7ejGLRCcHwgyh8TohrKIsAhZZJN2XJvi0Etevrlc2htrX7U5MLr2ikamRmzA==}
+    engines: {node: ^18 || >=20, pnpm: '>=8'}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.5.0'
+    dependencies:
+      eslint: 8.56.0
     dev: true
 
   /@skarab/prettier-config@1.2.2(prettier@3.1.1):

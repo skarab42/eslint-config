@@ -15,21 +15,18 @@
   },
   "bugs": "https://github.com/skarab42/eslint-config/issues",
   "type": "commonjs",
-  "main": "./output/eslint-config/index.js",
-  "types": "./output/eslint-config/index.d.ts",
-  "bin": {
-    "eslint-staged": "./output/eslint-staged/index.js"
-  },
+  "main": "./output/index.js",
+  "types": "./output/index.d.ts",
   "exports": {
-    ".": "./output/eslint-config/index.js",
-    "./configs": "./output/eslint-config/configs/index.js",
-    "./configs/*": "./output/eslint-config/configs/*.js",
-    "./configs/*.js": "./output/eslint-config/configs/*.js",
-    "./overrides": "./output/eslint-config/overrides/index.js",
-    "./overrides/*": "./output/eslint-config/overrides/*.js",
-    "./overrides/*.js": "./output/eslint-config/overrides/*.js",
-    "./recommended": "./output/eslint-config/configs/recommended.js",
-    "./recommended-commonjs": "./output/eslint-config/configs/recommended-commonjs.js",
+    ".": "./output/index.js",
+    "./configs": "./output/configs/index.js",
+    "./configs/*": "./output/configs/*.js",
+    "./configs/*.js": "./output/configs/*.js",
+    "./overrides": "./output/overrides/index.js",
+    "./overrides/*": "./output/overrides/*.js",
+    "./overrides/*.js": "./output/overrides/*.js",
+    "./recommended": "./output/configs/recommended.js",
+    "./recommended-commonjs": "./output/configs/recommended-commonjs.js",
     "./package.json": "./package.json"
   },
   "private": false,
@@ -51,8 +48,7 @@
     "format": "prettier **/* --ignore-unknown",
     "format:write": "pnpm format --write",
     "build": "rimraf ./output && tsc -p tsconfig.build.json",
-    "semantic-release": "semantic-release --branches main",
-    "eslint-staged": "node ./output/eslint-staged/index.js"
+    "semantic-release": "semantic-release --branches main"
   },
   "peerDependencies": {
     "eslint": ">=8",
@@ -75,6 +71,7 @@
     "eslint-plugin-yml": "^1.11.0"
   },
   "devDependencies": {
+    "@skarab/eslint-staged": "^1.0.0",
     "@skarab/prettier-config": "^1.2.2",
     "@skarab/typescript-config": "^3.1.0",
     "@types/eslint": "^8.56.0",

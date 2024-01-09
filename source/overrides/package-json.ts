@@ -53,7 +53,7 @@ export function packageJson(): ConfigOverride {
             'pnpm',
             'engines',
             'packageManager',
-            
+
             'prettier',
             'eslintConfig',
 
