@@ -96,22 +96,9 @@ const browserConfig = config({
 });
 ```
 
-## Using [lint-staged](https://github.com/lint-staged/lint-staged) with `@skarab/eslint-config` and `eslint-staged`
+# Related tools
 
-`@skarab/eslint-config` is designed to seamlessly integrate with `lint-staged`, offering an efficient pre-commit file handling and linting process. When instaling the package it includes `eslint-staged`, a script that enhances the ESLint process.
-
-```json
-"lint-staged": {
-  "*": [
-    "pnpm eslint-staged --fix --max-warnings=0",
-    "pnpm prettier --write --ignore-unknown"
-  ]
-}
-```
-
-### How `eslint-staged` works
-
-`eslint-staged` acts as a wrapper around ESLint, enhancing its functionality. It processes files passed by `lint-staged` and applies ESLint rules, but with an added advantage: it respects ignore patterns defined in .eslintignore files or in the ESLint configuration `.eslintrc.js` under the `ignorePatterns` property. This means `eslint-staged` **will only lint files that are not explicitly ignored**, streamlining the linting process and ensuring only relevant files are checked.
+- [@skarab/eslint-staged](https://github.com/skarab42/eslint-staged)
 
 # My other shared configurations
 
